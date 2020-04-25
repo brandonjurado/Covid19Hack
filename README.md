@@ -14,7 +14,6 @@ $ npm install
 $ npm start
 # open your browser and go to https://localhost:3000
 ```
-
 ## Easy Lambdas:
 #### This has been set up to act a versatile way to quickly develop and deploy AWS lambda functions so that we can quickly send information between services, and has the ability to hook into DynamoDB to store information to S3.
 ##### Setting up and deploying:
@@ -95,7 +94,6 @@ sls dynamodb install
 sls dynamodb start (in one terminal)
 sls wsgi serve (in another)
 ```
-
 ## Contributors
 
 [Armando Soriano](https://github.com/ArmSoriano)

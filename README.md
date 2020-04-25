@@ -7,7 +7,10 @@ Description of our project.
 ## Building & Running
 
 ```
-$ cd  backend
+$ cd  public/javascripts
+$ npm install
+$ npm run-script build
+$ cd ..
 $ npm install
 $ npm start
 # open your browser and go to https://localhost:3000

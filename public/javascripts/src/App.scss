@@ -1,0 +1,48 @@
+html, body, #container, .App, #map{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#toolbox {
+    position: fixed;
+    z-index: 1;
+    width: 450px;
+    height: 940px;
+    background: #2b2a2a;
+    top: 20px;
+    left:20px;
+    box-shadow: 0px 0px 20px rgba(10,10,10,0.2 );
+
+    #state-farm-icon{
+        width:350px;
+        height:1.2em;
+    }
+
+    #appbar {
+        background: linear-gradient(20deg, rgba(255,0,44,1) 4%, rgba(255,79,79,1) 53%, rgba(255,0,69,1) 100%);;
+    }
+
+    .tab-list {
+        border-bottom: 1px solid #ccc;
+        padding-left: 0;
+    }
+
+    .tab-list-item {
+        display: inline-block;
+        list-style: none;
+        margin-bottom: -1px;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .tab-list-active {
+        background-color: white;
+        border: solid #ccc;
+        border-width: 1px 1px 0 1px;
+    }
+}
+
+#map {
+    z-index: 0;
+}

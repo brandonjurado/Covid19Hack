@@ -5,12 +5,13 @@ import './App.scss';
 // JSX components
 import Map from './Map.jsx';
 import Toolbox from './Toolbox.jsx';
+import Login from'./Login.jsx';
 
 function App() {
   console.log("Adding react component")
   return (
     <div className="App"> 
-        //<img src="javascripts/public/logo512.png" />
+        <Login />
         <Map />
         <Toolbox />
     </div>

@@ -12,7 +12,7 @@ $ npm run-script build
 $ cd ..
 $ npm install
 $ npm start
-# open your browser and go to https://localhost:3000
+# open your browser and go to http://localhost:3000
 ```
 ## Easy Lambdas:
 #### This has been set up to act a versatile way to quickly develop and deploy AWS lambda functions so that we can quickly send information between services, and has the ability to hook into DynamoDB to store information to S3.

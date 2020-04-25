@@ -5,40 +5,49 @@
 Description of our project.
 
 ## Building & Running
-
 ```
 cd  backend
 npm install
 npm start
 # open your browser and go to https://localhost:3000
 ```
-# Starting the Stats/ML Models Frame Work:
+
+## Setting up the Stats/ML Models API and user store:
 ```
-cd StatsModelsFW
-pip install -r requirements.txt
-python statsModelsAPI.py
-=======
-$ cd  backend
-$ npm install
-$ npm start
-# open your browser and go to https://localhost:3000
+cd StatsModels/flaskapp
+Windows: venv\Scripts\activate.bat
+Mac/Linux: source something, don't know
+npm install -g serverless
+npm install --save-dev serverless-dynamodb-local
+npm install serverless-offline --save-dev
+sls dynamodb install --localPath ./bin
+sls dynamodb install
 ```
 
 ### Starting the Stats/ML Models Frame Work
+To start a local dev instance:
+First, download and setup docker.
 ```
-$ cd StatsModelsFW
-$ pip install -r requirements.txt
-$ python statsModelsAPI.py
-# open your browser and go to https://localhost:5000
+$ cd StatsModelsFW/flaskapp
+$ sls wsgi serve
+$ sls dynamodb start
 ```
-Build all of your models in BuildModels as separate python files
+Build all of your models in StatsModelsFW/flaskapp/BuildModels as separate python files
 Then in statsModelsAPI.py
 - import the new function as `from ModelBuilds.my_file import my_function`
 - define a new route with `@app.route("/endpoint")`  
 - have that route define a function that simply returns `my_function`
 
-To test the homepage will automatically launch and /test_model will run through basic functionality and return a statistic.
-AWS deployment instructions to come soon.
+To test the endpoints, you all have a received a link to postman.  There is a collection setup demonstrating the user store functionality as well as a test model that returns an image.
+
+### Deploying with AWS Lambdas and DynamoDB
+If you have installed any packages to the venv then you need to run
+```
+cd StatsModelsFW/flaskapp
+pip freeze > requirements.txt
+```
+After that you simply run sls deploy, and you're done!
+The first time can take a while btw.
 
 ## Contributors
 

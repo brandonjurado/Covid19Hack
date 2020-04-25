@@ -12,14 +12,14 @@ var app = express();
 // view engine setup
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-app.set('views', path.join(__dirname, 'public/javascripts/dist/'));
+app.set('views', path.join(__dirname, 'javascripts/dist/'));
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public/javascripts/dist')));
+app.use(express.static(path.join(__dirname, 'javascripts/public')));
+app.use(express.static(path.join(__dirname, 'javascripts/dist')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

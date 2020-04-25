@@ -10,10 +10,10 @@ Description of our project.
 $ cd  public/javascripts
 $ npm install
 $ npm run-script build
-$ cd ..
+$ cd ../../ # go back to project root dir
 $ npm install
 $ npm start
-# open your browser and go to https://localhost:3000
+# open your browser and go to http://localhost:3000
 ```
 
 ### Starting the Stats/ML Models Frame Work

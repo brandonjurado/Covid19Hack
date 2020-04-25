@@ -18,6 +18,13 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'url-loader?limit=25000'
+        }
+      },
+      {
         test: /\.html$/,
         use: [
           {

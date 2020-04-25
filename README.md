@@ -17,7 +17,7 @@ $ npm start
 
 ## Setting up the Stats/ML Models API and user store:
 ```
-cd StatsModels/flaskapp
+cd StatsModelsFW\flaskapp
 Windows: venv\Scripts\activate.bat
 Mac/Linux: source something, don't know
 npm install -g serverless

@@ -6,7 +6,7 @@ Description of our project.
 
 ## Building & Running
 ```
-$ cd  public/javascripts
+$ cd javascripts
 $ npm install
 $ npm run-script build
 $ cd ..

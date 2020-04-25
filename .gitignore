@@ -125,6 +125,3 @@ dist
 
 # IntelliJ directory
 .idea
-
-#venv
-StatsModelsFW/flaskapp/venv

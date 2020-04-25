@@ -52,6 +52,8 @@ pip freeze > requirements.txt
 After that you simply run sls deploy, and you're done!
 The first time can take a while btw.
 
+# ALL ML FRAMEWORK AND DEPLOYMENT INSTRUCTIONS TO COME SOON, UNTIL THEN READ THE INSTRUCTIONS.TXT IN STATSMODELSFW DIRECTORY.
+
 ## Contributors
 
 [Armando Soriano](https://github.com/ArmSoriano)

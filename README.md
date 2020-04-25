@@ -1,9 +1,9 @@
 # Covid19Hack
-===
-Earth Hack 2020
+
+## Earth Hack 2020
 
 # Building & Running
-===
+
 ```
 cd  backend
 npm install

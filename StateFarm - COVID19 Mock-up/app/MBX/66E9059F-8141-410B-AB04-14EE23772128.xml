@@ -1,0 +1,675 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="66E9059F-8141-410B-AB04-14EE23772128" platform="MtWeb" defaultW="1400" defaultH="2350" measureW="1400" measureH="2350" mobileScreenScale="0">
+  <controls controlCount="70">
+    <control controlID="FFA3625D-EFE0-4B4C-AED0-FE7D1D5A560E" controlTypeID="Shape" x="0" y="312" w="1400" h="1193" zOrder="0">
+      <borderColor>4281808953</borderColor>
+      <borderVisible>False</borderVisible>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <textSize>14</textSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="16EDBB9F-8B91-4B60-87D8-B70E9677D6E9" controlTypeID="Shape" x="0" y="1505" w="1400" h="767" zOrder="1">
+      <color>4294177779</color>
+      <borderColor>4294177779</borderColor>
+      <borderVisible>False</borderVisible>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <textSize>14</textSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="2BF62165-38D8-4C83-B4B3-78E348EE9C41" controlTypeID="Image" x="0" y="0" w="1400" h="312" zOrder="2">
+      <showText>False</showText>
+    </control>
+    <control controlID="EB177091-2EBD-4841-A999-F98782B4007B" controlTypeID="Label" x="601" y="102" w="171" h="54" zOrder="3">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Mockplus</text>
+      <textColor>4281545523</textColor>
+      <textSize>40</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="33536B46-9955-476A-B5FA-5549900534A9" controlTypeID="Label" x="641" y="1600" w="94" h="54" zOrder="4">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>FAQS</text>
+      <textColor>4281545523</textColor>
+      <textSize>40</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="38E54377-566A-4C85-BB09-0C5C457C17BE" controlTypeID="TextArea" x="314" y="162" w="771" h="36" zOrder="5">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Prototype+Faster%2C+Smarter%2C+Easier</text>
+      <textColor>4284900966</textColor>
+      <textSize>16</textSize>
+      <textAlign>HaCenter</textAlign>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="BEB812A6-DE5E-456A-A32C-2ADEB86DE773" controlTypeID="Label" x="570" y="347" w="225" h="54" zOrder="6">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>DOWNLOAD</text>
+      <textColor>4284900966</textColor>
+      <textSize>40</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="E9D98A0A-B6EC-4BED-AF40-0D4A217A016F" controlTypeID="TextArea" x="314" y="407" w="771" h="36" zOrder="7">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Smart+minds%2C+with+smart+Mockplus!</text>
+      <textColor>4284900966</textColor>
+      <textSize>16</textSize>
+      <textAlign>HaCenter</textAlign>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="F620AEE4-9CCB-4B46-8DCE-22E1CD23C161" controlTypeID="Button" x="605" y="216" w="180" h="40" zOrder="8">
+      <states>
+        <state propName="Color" stateType="state_mouseOver" isChecked="True" value="3854383616" varType="20"/>
+      </states>
+      <color>4290591232</color>
+      <borderColor>4290591232</borderColor>
+      <borderVisible>False</borderVisible>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>FREE+TRIAL</text>
+      <textColor>4294967295</textColor>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+      <radius>0</radius>
+      <thickness>2</thickness>
+    </control>
+    <control controlID="D145464C-AB49-4E06-BA66-F722D50A346A" controlTypeID="Image" x="20" y="36" w="96" h="30" zOrder="9">
+      <caption>logo</caption>
+    </control>
+    <control controlID="3F795566-AA3A-4F0D-AC61-8047E5A394AC" controlTypeID="Label" x="629" y="41" w="74" h="19" zOrder="10">
+      <states>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+      </states>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="21EDE6BF-82D9-4FD8-8511-A5E9370AA192" linkType="ltPageLink" isApplyIncludePage="False" title="What's+New">
+          <area shape="0" alt="" ID="{C40C691F-C830-4209-89D6-283876E80EE3}" coords="(0,0,74,19)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>What's+New</text>
+      <textColor>4288256409</textColor>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="2B650412-4DC3-488A-848C-7912706C52CA" controlTypeID="Label" x="417" y="41" w="52" h="19" zOrder="11">
+      <states>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+      </states>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Features</text>
+      <textColor>4288256409</textColor>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="650CAD53-15FD-42B0-B47F-173C9BCFF834" controlTypeID="Label" x="518" y="41" w="63" h="19" zOrder="12">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Download</text>
+      <textColor>4281545523</textColor>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="6580AE8E-7C52-4BA5-A469-82BFD4526618" controlTypeID="Label" x="753" y="41" w="23" h="19" zOrder="13">
+      <states>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+      </states>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Buy</text>
+      <textColor>4288256409</textColor>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="31EE05ED-9460-483B-BFA4-6C13FE75ACF4" controlTypeID="Label" x="818" y="41" w="28" h="19" zOrder="14">
+      <states>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+      </states>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Blog</text>
+      <textColor>4288256409</textColor>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="267215C5-DB83-42B4-88FB-8D5724ED249A" controlTypeID="Label" x="887" y="41" w="50" h="19" zOrder="15">
+      <states>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+      </states>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="D639310A-16BF-4432-AA5C-140F25963633" linkType="ltPageLink" isApplyIncludePage="False" title="Support">
+          <area shape="0" alt="" ID="{31778207-66B3-46A3-AFEE-CB951D369215}" coords="(0,0,50,19)"/>
+        </link>
+      </links>
+      <interactiveData>
+        <entry title="">
+          <area shape="0" alt="" ID="{47BAC819-9C11-433E-A3CE-710298F4A94B}" coords="(0,0,50,19)"/>
+          <events title="">
+            <event eventType="atClick" isChecked="True">
+              <behaviour title="" isChecked="True" isWait="False" isLoop="False" execMode="emParallel">
+                <target targetID="E853C3A6-E8DB-4E20-90C5-828C4A2350CE" isChecked="True" isAutoRecovery="False" isLoop="False" execMode="emSequence">
+                  <command name="Popup State Change" isChecked="True" descrition="">
+                    <param name="AniInterpolation" value="0" varType="3" description=""/>
+                    <param name="AniDuration" value="200" varType="3" description=""/>
+                    <param name="AniAutoReverse" value="False" varType="11" description=""/>
+                    <param name="AniLoop" value="False" varType="11" description=""/>
+                    <param name="AniInterpolationTypeOut" value="False" varType="11" description=""/>
+                    <param name="Delay" value="0" varType="3" description=""/>
+                    <param name="Value" value="0" varType="3" description=""/>
+                    <param name="AniType" value="0" varType="3" description=""/>
+                  </command>
+                </target>
+              </behaviour>
+            </event>
+          </events>
+        </entry>
+      </interactiveData>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Support</text>
+      <textColor>4288256409</textColor>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="9CB9FA81-098F-425E-ACBB-2E57DF59C63D" controlTypeID="Master" x="0" y="2220" w="1400" h="80" zOrder="16" masterID="1B259074-56BF-43DD-8952-280A1430C009">
+      <groupChildrenDescriptors>
+        <control controlID="A4520802-3A31-435C-9BE2-EC940F171ADF" controlTypeID="Shape" x="0" y="0" w="1400" h="80" zOrder="0">
+          <color>4279374612</color>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <textSize>14</textSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="CD6B96B4-6997-4D99-9762-CD143B26FC9E" controlTypeID="Label" x="683" y="32" w="285" h="16" zOrder="1">
+          <color>16777215</color>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>%C2%A9+2014-2018+Jongde+Software+LLC+All+rights+reserved.</text>
+          <textColor>4284900966</textColor>
+          <textSize>12</textSize>
+          <textAlign>HaCenter</textAlign>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="22D8D397-FD5B-4DAA-85C8-9A9A60D77258" controlTypeID="Label" x="163" y="30" w="104" h="19" zOrder="2">
+          <states>
+            <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4288256409" varType="20"/>
+          </states>
+          <color>16777215</color>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Terms+of+Service+</text>
+          <textColor>4291611852</textColor>
+          <textAlign>HaCenter</textAlign>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="5459A1A8-535E-44E3-8667-A19D50675B5D" controlTypeID="Label" x="310" y="30" w="86" h="19" zOrder="3">
+          <states>
+            <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4288256409" varType="20"/>
+          </states>
+          <color>16777215</color>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Privacy+Policy+</text>
+          <textColor>4291611852</textColor>
+          <textAlign>HaCenter</textAlign>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="CDF15B13-8712-4220-9603-8CB3957B4968" controlTypeID="Label" x="443" y="30" w="55" h="19" zOrder="4">
+          <states>
+            <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4288256409" varType="20"/>
+          </states>
+          <color>16777215</color>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Site+Map</text>
+          <textColor>4291611852</textColor>
+          <textAlign>HaCenter</textAlign>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="D07D71F4-0910-4437-ACE5-96552C99052D" controlTypeID="Icon" x="1094" y="28" w="24" h="24" zOrder="5">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4291611852" varType="20"/>
+          </states>
+          <icon>
+            <ID/>
+            <iconFontName>jdFontAwesome</iconFontName>
+            <iconCode>61570</iconCode>
+          </icon>
+          <URL>4CEBA48D845888E06C868951A5E1A875.svg</URL>
+        </control>
+        <control controlID="AE40DCD3-31E3-4D7C-B71A-7B4E119E8117" controlTypeID="Icon" x="1135" y="28" w="24" h="24" zOrder="6">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4291611852" varType="20"/>
+          </states>
+          <icon>
+            <ID/>
+            <iconFontName>jdFontAwesome</iconFontName>
+            <iconCode>61569</iconCode>
+          </icon>
+          <URL>520A776503D70E7FC53BE8D209CC96C1.svg</URL>
+        </control>
+        <control controlID="DF4DA051-07DC-4AC8-88DE-701727B9A85E" controlTypeID="Icon" x="1174" y="28" w="24" h="24" zOrder="7">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4291611852" varType="20"/>
+          </states>
+          <icon>
+            <ID/>
+            <iconFontName>jdFontAwesome</iconFontName>
+            <iconCode>61652</iconCode>
+          </icon>
+          <URL>282331BE75C40FB6D299F787B7BFD38F.svg</URL>
+        </control>
+        <control controlID="23DCED71-F778-44AE-BA96-FC7DC074C68D" controlTypeID="Icon" x="1052" y="28" w="24" h="24" zOrder="8">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4291611852" varType="20"/>
+          </states>
+          <icon>
+            <ID/>
+            <iconFontName>jdFontAwesome</iconFontName>
+            <iconCode>61580</iconCode>
+          </icon>
+          <URL>24B6825248D2E3B41E6A51EC7FE24971.svg</URL>
+        </control>
+        <control controlID="D5AAB80D-B72F-453F-8527-90E7B0B53D22" controlTypeID="Icon" x="1009" y="27" w="26" h="26" zOrder="9">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4291611852" varType="20"/>
+          </states>
+          <icon>
+            <ID/>
+            <iconFontName>jdIonicons</iconFontName>
+            <iconCode>62029</iconCode>
+          </icon>
+          <URL>4529DADA0AD1F8BF89E5709239A0C3BD.svg</URL>
+        </control>
+        <control controlID="AC0E7C51-1179-4994-9A5D-2AFF3F843E98" controlTypeID="Image" x="19" y="25" w="96" h="30" zOrder="10">
+          <caption>logo</caption>
+        </control>
+        <control controlID="EA9B4A8F-9F00-4E7A-8D16-FB89A0B87777" controlTypeID="Button" x="1228" y="0" w="172" h="80" zOrder="11">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="3854383616" varType="20"/>
+          </states>
+          <color>4290591232</color>
+          <borderColor>4290591232</borderColor>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>FREE+TRIAL</text>
+          <textColor>4294967295</textColor>
+          <textSize>16</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+          <radius>0</radius>
+          <thickness>2</thickness>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="C21FD2E0-5E8B-4413-8587-617A05113062" controlTypeID="__group__" x="288" y="510" w="366" h="182" zOrder="17">
+      <groupChildrenDescriptors>
+        <control controlID="D409BF1C-7257-4143-A153-F364A3F06298" controlTypeID="Label" x="0" y="0" w="327" h="40" zOrder="0">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Mockplus+for+WINDOWS</text>
+          <textColor>4281545523</textColor>
+          <textSize>30</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="A76A01F3-1E12-4586-9903-43F7F6A7E8FB" controlTypeID="TextArea" x="0" y="50" w="355" h="82" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>For+Windows+Vista%2F7%2F8%2F10%0D%0A%0D%0AVersion%3A+3.3.1.0</text>
+          <textColor>4284900966</textColor>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="C7117C36-1DF4-4F18-A7A9-9B2651EB5B45" controlTypeID="Button" x="0" y="142" w="180" h="40" zOrder="2">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="3848693350" varType="20"/>
+          </states>
+          <color>4281545523</color>
+          <borderColor>4290591232</borderColor>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>DOWNLOAD+FREE</text>
+          <textColor>4294967295</textColor>
+          <textSize>16</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+          <radius>0</radius>
+          <thickness>2</thickness>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="E552F1E3-151C-402C-9BE8-9712423FB668" controlTypeID="Icon" x="102" y="566" w="70" h="70" zOrder="18">
+      <icon>
+        <ID/>
+        <iconFontName>jdFontAwesome</iconFontName>
+        <iconCode>61818</iconCode>
+      </icon>
+      <URL>BDF25A843A3C8925DA92BCDA8DEC8559.svg</URL>
+    </control>
+    <control controlID="B1BD4A5F-41A5-4219-89D4-F1FF05055FCE" controlTypeID="__group__" x="287" y="788" w="366" h="182" zOrder="19">
+      <groupChildrenDescriptors>
+        <control controlID="CC2AE475-9FAB-4AA0-B74A-675F184011BE" controlTypeID="Label" x="0" y="0" w="314" h="40" zOrder="0">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Mockplus+for+ANDROID</text>
+          <textColor>4281545523</textColor>
+          <textSize>30</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="B9DE3525-25C9-4F58-B37E-798F29A0AE93" controlTypeID="TextArea" x="0" y="50" w="355" h="82" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>For+Android+4.0%2B%0D%0A%0D%0AVersion%3A+3.2.10.0</text>
+          <textColor>4284900966</textColor>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="51DEAE55-FA74-4590-8FA3-2CCE2979FB20" controlTypeID="Button" x="0" y="142" w="180" h="40" zOrder="2">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="3848693350" varType="20"/>
+          </states>
+          <color>4281545523</color>
+          <borderColor>4290591232</borderColor>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>DOWNLOAD+FREE</text>
+          <textColor>4294967295</textColor>
+          <textSize>16</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+          <radius>0</radius>
+          <thickness>2</thickness>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="716CFBC1-2935-4CA4-AF9B-9EA222B77EEF" controlTypeID="__group__" x="1034" y="510" w="366" h="182" zOrder="20">
+      <groupChildrenDescriptors>
+        <control controlID="AEF36323-00BB-49CC-B7A2-66F826F303A0" controlTypeID="Label" x="0" y="0" w="246" h="40" zOrder="0">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Mockplus+for+MAC</text>
+          <textColor>4281545523</textColor>
+          <textSize>30</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="5843039E-4059-4303-B848-DDA9121C3402" controlTypeID="TextArea" x="0" y="50" w="355" h="82" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>For+OSX+10.9%2B%0D%0A%0D%0AVersion%3A+3.3.1.0</text>
+          <textColor>4284900966</textColor>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="7A912F96-C909-4801-86D1-F36E2E2B3F27" controlTypeID="Button" x="0" y="142" w="180" h="40" zOrder="2">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="3848693350" varType="20"/>
+          </states>
+          <color>4281545523</color>
+          <borderColor>4290591232</borderColor>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>DOWNLOAD+FREE</text>
+          <textColor>4294967295</textColor>
+          <textSize>16</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+          <radius>0</radius>
+          <thickness>2</thickness>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1C99436D-DFD0-47A4-9977-B2A06EB9EF31" controlTypeID="Icon" x="851" y="561" w="80" h="80" zOrder="21">
+      <icon>
+        <ID/>
+        <iconFontName>jdFontAwesome</iconFontName>
+        <iconCode>61817</iconCode>
+      </icon>
+      <URL>5463271C540250F770DA8A5721C9E4F4.svg</URL>
+    </control>
+    <control controlID="5833575C-F19C-43FD-AFCF-54594337976A" controlTypeID="__group__" x="1032" y="788" w="355" h="182" zOrder="22">
+      <groupChildrenDescriptors>
+        <control controlID="82D05C1C-C3EC-4618-B1B9-48B40EE1D3FD" controlTypeID="Label" x="0" y="0" w="143" h="40" zOrder="0">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>MKPLAYER</text>
+          <textColor>4281545523</textColor>
+          <textSize>30</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="4215E72B-34CC-472F-A14A-8953EDB35DBD" controlTypeID="TextArea" x="0" y="50" w="355" h="82" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>For+iOS+7.0%2B%0D%0A%0D%0AVersion%3A+3.2.10.0</text>
+          <textColor>4284900966</textColor>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="92350BED-53ED-4CC2-B41A-92150D08D0E0" controlTypeID="Button" x="0" y="142" w="180" h="40" zOrder="2">
+          <states>
+            <state propName="Color" stateType="state_mouseOver" isChecked="True" value="3848693350" varType="20"/>
+          </states>
+          <color>4281545523</color>
+          <borderColor>4290591232</borderColor>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>DOWNLOAD+FREE</text>
+          <textColor>4294967295</textColor>
+          <textSize>16</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+          <radius>0</radius>
+          <thickness>2</thickness>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="D90B4538-8A16-4A5C-828E-1AE96FE57B5A" controlTypeID="Icon" x="97" y="839" w="80" h="80" zOrder="23">
+      <icon>
+        <ID/>
+        <iconFontName>jdIcoFont</iconFontName>
+        <iconCode>58888</iconCode>
+      </icon>
+      <URL>7C3E7556DFF0200716C95095C3332CD1.svg</URL>
+    </control>
+    <control controlID="586A2664-879B-417B-B373-52B1426AC0CC" controlTypeID="Icon" x="851" y="839" w="80" h="80" zOrder="24">
+      <icon>
+        <ID/>
+        <iconFontName>jdFontAwesome</iconFontName>
+        <iconCode>62055</iconCode>
+      </icon>
+      <URL>889E208791BEEA5925F0E9D3A28E4DF6.svg</URL>
+    </control>
+    <control controlID="2AB2B777-48B0-4174-9646-7069E842BBE4" controlTypeID="Label" x="638" y="1135" w="117" h="22" zOrder="25">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>%5BRelease+History%5D</text>
+      <textColor>4290591232</textColor>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="7BFFBEDF-5C66-4E49-9810-9CFEEDB1E42F" controlTypeID="Label" x="509" y="1173" w="102" h="22" zOrder="26">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Discover+more</text>
+      <textColor>4281545523</textColor>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="CD25B8FE-45AF-4317-817F-0838FFB059E9" controlTypeID="Label" x="779" y="1173" w="97" h="22" zOrder="27">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>+for+Mockplus</text>
+      <textColor>4281545523</textColor>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="26CE1D65-2E77-4D55-B72E-744BBFEB0122" controlTypeID="Label" x="555" y="1336" w="269" h="22" zOrder="28">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Download+Mockplus+plugin+for+Sketch</text>
+      <textColor>4290591232</textColor>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="AB7305A6-6F0C-4512-9CBC-AAF3443A44A0" controlTypeID="Label" x="627" y="1173" w="136" h="22" zOrder="29">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>+trusted+downloads</text>
+      <textColor>4290591232</textColor>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="6B240C60-7AD2-4B29-9EE0-7CF1BB557F77" controlTypeID="TextArea" x="652" y="1385" w="105" h="74" zOrder="30">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>For+Sketch+45%2B%0D%0A%0D%0AView+Tutorials</text>
+      <textColor>4281545523</textColor>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="0F77EA40-9D21-4980-8D51-C17B63D7966A" controlTypeID="Icon" x="679" y="1260" w="50" h="50" zOrder="31">
+      <color>4294940928</color>
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62300</iconCode>
+      </icon>
+      <URL>E81ED979293FF1C7F35153E7BDA571B8.svg</URL>
+    </control>
+    <control controlID="8C7056BA-9880-4995-AE40-62B8F0D8522A" controlTypeID="ScopeBar" x="495" y="1689" w="410" h="48" zOrder="32">
+      <color>4291611852</color>
+      <borderVisible>False</borderVisible>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Account+%26+Purchase%2CInstallation+%26+Update</text>
+      <textSize>14</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedColor>4290591232</selectedColor>
+      <radius>0</radius>
+      <selectedTextColor>4294967295</selectedTextColor>
+    </control>
+    <control controlID="95CB6B8B-D20B-4CB8-B398-59227A871C00" controlTypeID="Master" x="132" y="1818" w="1135" h="245" zOrder="33" masterID="9CE81536-19B9-4DD0-BD4B-CE350C6EE477">
+      <groupChildrenDescriptors>
+        <control controlID="C03762E4-DF9F-4E32-97B8-B6AEFA0B33CA" controlTypeID="Accordion" x="0" y="0" w="1135" h="245" zOrder="0">
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>1.How+to+sign+up+in+Mockplus%3F%0D%0A-+There+are+two+ways+to+sign+up+in+Mockplus%3A%0D%0A-++Install+Mockplus+desktop+app+and+open+it+for+signing+up.%0D%0A-++Click+the+link%3A+https%3A%2F%2Fwww.mockplus.com%2Fuser%2Fregister+in+your+browser+to+sign+up.%0D%0A2.Do+I+need+to+pay+the+extra+fee+whenever+Mockplus+comes+out+with+a+new+updated+version%3F+%0D%0A-+After+the+purchase%2C+you+do+not+need+to+pay+an+extra+fee+for+any+new+version+or+update+of+Mockplus.%0D%0A-+If+you're+a+user+of+Free+version%2C+you+also+don't+need+to+pay+any+fee+for+the+new+versions+or+updates.%0D%0A3.Can+I+install+and+use+Mockplus+on+multiple+computers%3F%0D%0A-+Every+named+user%2C+with+both+a+desktop+and+a+secondary+laptop%2Fhome+computer%2C+can+legally+install+and+use+Mockplus+on+both+computers.</text>
+          <textSize>14</textSize>
+          <lineSpacing>0</lineSpacing>
+          <selectedColor>4291611852</selectedColor>
+          <showSeparator>False</showSeparator>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="C027B3DD-F2BC-4718-BFE4-5D72088713B6" controlTypeID="Master" x="1142" y="42" w="238" h="19" zOrder="34" masterID="F21DDD7C-5FFF-4C9B-BD85-0CEAC5252BD1">
+      <groupChildrenDescriptors>
+        <control controlID="1C01F3CD-9FC4-4F6B-BAA4-31496C5D47C2" controlTypeID="Label" x="29" y="0" w="34" h="19" zOrder="0">
+          <states>
+            <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+          </states>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Login</text>
+          <textColor>4288256409</textColor>
+          <lineSpacing>0</lineSpacing>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="2C9944D3-31FD-465B-823B-FE699DEC3C59" controlTypeID="Label" x="93" y="0" w="50" h="19" zOrder="1">
+          <states>
+            <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+          </states>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Register</text>
+          <textColor>4288256409</textColor>
+          <lineSpacing>0</lineSpacing>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="18DE880D-EA99-4EB8-8438-A9B3D9506286" controlTypeID="Label" x="164" y="0" w="65" h="19" zOrder="2">
+          <states>
+            <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4281545523" varType="20"/>
+          </states>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>%5B+Chinese+%5D</text>
+          <textColor>4288256409</textColor>
+          <lineSpacing>0</lineSpacing>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="388F1DED-B19E-44F2-B6C6-D68A4EC839E6" controlTypeID="Icon" x="0" y="1" w="18" h="18" zOrder="3">
+          <icon>
+            <ID/>
+            <iconFontName>jdIonicons</iconFontName>
+            <iconCode>62368</iconCode>
+          </icon>
+          <URL>B91434690C5B5224D1CC6B1998F1178A.svg</URL>
+        </control>
+        <control controlID="7A586971-F32A-4A80-AA06-292CD48DB311" controlTypeID="VRule" x="74" y="5" w="12" h="10" zOrder="4">
+          <color>4290493371</color>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="E853C3A6-E8DB-4E20-90C5-828C4A2350CE" controlTypeID="PopupPanel" x="887" y="76" w="46" h="46" zOrder="35">
+      <groupChildrenDescriptors>
+        <control controlID="54553778-6991-4099-99DE-EBCC882E50A8" controlTypeID="Panel" x="0" y="0" w="1400" h="2350" zOrder="0">
+          <locked>True</locked>
+          <color>1879048192</color>
+          <borderVisible>False</borderVisible>
+          <canMove>False</canMove>
+          <alias>background</alias>
+          <groupChildrenDescriptors>
+            <control controlID="E1DB748F-26F8-4F24-94FC-120610BDD73D" controlTypeID="Border" x="0" y="0" w="1400" h="2350" zOrder="0">
+              <borderVisible>False</borderVisible>
+              <alias>borderLayer</alias>
+            </control>
+          </groupChildrenDescriptors>
+          <thinkness>1</thinkness>
+        </control>
+        <control controlID="4C7C693F-B54A-44BE-A68E-EA4B68670A88" controlTypeID="PopupPanelContent" x="887" y="74" w="168" h="79" zOrder="1">
+          <color>16777215</color>
+          <alias>content</alias>
+          <groupChildrenDescriptors>
+            <control controlID="AB3F53C9-7AEF-4FEF-84BD-54299DE4F484" controlTypeID="List" x="0" y="0" w="168" h="79" zOrder="0">
+              <color>4281282351</color>
+              <borderVisible>False</borderVisible>
+              <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+              <text>Support%0D%0ATutorials%0D%0AAbout+Us</text>
+              <textColor>4288256409</textColor>
+              <textSize>14</textSize>
+              <lineSpacing>0</lineSpacing>
+              <selectedColor>4283979864</selectedColor>
+              <selectedTextColor>4288256409</selectedTextColor>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>14</fontSize>
+    <fontFamily>Segoe+UI</fontFamily>
+    <guideLines>
+      <guideLine isLocked="False" isHori="True" value="20"/>
+      <guideLine isLocked="False" isHori="True" value="1380"/>
+      <guideLine isLocked="False" isHori="False" value="38"/>
+      <guideLine isLocked="False" isHori="False" value="1000"/>
+      <guideLine isLocked="False" isHori="True" value="724"/>
+      <guideLine isLocked="False" isHori="False" value="78"/>
+      <guideLine isLocked="False" isHori="True" value="886"/>
+      <guideLine isLocked="False" isHori="True" value="1226"/>
+      <guideLine isLocked="False" isHori="True" value="98"/>
+      <guideLine isLocked="False" isHori="True" value="200"/>
+      <guideLine isLocked="False" isHori="True" value="858"/>
+      <guideLine isLocked="False" isHori="True" value="940"/>
+    </guideLines>
+  </param>
+</mockup>

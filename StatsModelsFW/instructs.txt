@@ -1,0 +1,67 @@
+#SETUP NEW LAMBDA QUICKLY
+mkdir name
+cd name
+npm init -f
+npm install --save-dev serverless-wsgi serverless-python-requirements
+Inside StatsModelsFW grab either the app.py and serverless.yml file or their _db equivalents and put them in your directory, making sure to remove _db if you used those. Also grab the gitignore to use.
+virtualenv venv --python=python3
+venv\Scripts\activate.bat (or macs equivalent)
+pip install flask
+
+sls deploy(You are done here if you don't need a db)
+
+#WITH DATABASE - CONTINUATION
+pip install boto3
+pip freeze > requirements.txt
+sls deploy (done)
+
+
+#TO ADD LOCAL TESTING.  MAKE A COPY OF IT FIRST, AS IT MIGHT CAUSE IT TO BECOME TO LARGE TO DEPLOY
+Take and replace the plugins and custom in your .yml with:
+```
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+  - serverless-dynamodb-local
+
+custom:
+  tableName: 'users-table-${self:provider.stage}'
+  wsgi:
+    app: app.app
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: non-linux
+  dynamodb:
+    stages:
+      - ${self:provider.stage}
+```
+
+and in your app.py:
+
+'''
+import os
+import boto3
+
+from flask import Flask, jsonify, request
+app = Flask(__name__)
+
+USERS_TABLE = os.environ['USERS_TABLE']
+IS_OFFLINE = os.environ.get('IS_OFFLINE')
+
+if IS_OFFLINE:
+    client = boto3.client(
+        'dynamodb',
+        region_name='localhost',
+        endpoint_url='http://localhost:8000'
+    )
+else:
+    client = boto3.client('dynamodb')
+
+@app.route("/")
+def hello():
+... rest of application code ...
+'''
+npm install --save serverless-dynamodb-local
+sls dynamodb install
+sls dynamodb start (in one terminal)
+sls wsgi serve (in another)

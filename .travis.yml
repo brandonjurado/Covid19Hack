@@ -4,9 +4,8 @@ node_js:
   - 'stable'
 
 script:
-  - npm install
   # - node ./internals/scripts/generate-templates-for-linting
-  - npm test -- --maxWorkers=4
+  # - npm test -- --maxWorkers=4
   - npm run build
 
 before_install:

@@ -48,7 +48,7 @@ class SupplyTab extends React.Component {
     }
 
     render() {
-        console.log("Properties for SupplyTab", this.props)
+        //console.log("Properties for SupplyTab", this.props)
         return ( 
          <div role='tabpanel' hidden={this.props.value !== this.props.index} id={`app-tab-${this.props.index}`}>
             { this.props.value === this.props.index && 

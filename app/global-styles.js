@@ -13,8 +13,8 @@ html, body, #app, .App, #map, .root{
   z-index: 1;
   min-height: 50em;
   background: #2b2a2a;
-  top: 0em;
-  left:0em;
+  top: 10px;
+  left: 10px;
   box-shadow: 0px 0px 20px rgba(10,10,10,0.2 );
 
   * {color: white !important; }

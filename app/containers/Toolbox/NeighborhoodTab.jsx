@@ -58,7 +58,7 @@ class NeighborhoodTab extends React.Component {
     //                     <Divider />
 
     render() {
-        console.log("Properties for NeighborhoodTab", this.props)
+        //console.log("Properties for NeighborhoodTab", this.props)
         return ( 
             <div role='tabpanel' hidden={this.props.value !== this.props.index} id={`app-tab-${this.props.index}`}>
                 { this.props.value === this.props.index && 
@@ -76,7 +76,7 @@ class NeighborhoodTab extends React.Component {
                                     <Grid item  xs={4}>
                                          <Paper elevation={3} >
                                             <Typography align="center"  variant="h5">
-                                                {this.state.overview.cases}
+                                                {this.props.cases}
                                             </Typography>
                                             <Typography align="center"  variant="body1">Cases</Typography>
                                          </Paper>
@@ -84,7 +84,7 @@ class NeighborhoodTab extends React.Component {
                                     <Grid item  xs={4}>
                                          <Paper elevation={3} >
                                             <Typography align="center"  variant="h5">
-                                                {this.state.overview.deaths}
+                                                {this.props.deaths}
                                             </Typography>
                                             <Typography align="center"  variant="body1">Deaths</Typography>
                                          </Paper>
@@ -92,7 +92,7 @@ class NeighborhoodTab extends React.Component {
                                     <Grid item  xs={4}>
                                          <Paper elevation={3} >
                                             <Typography align="center" variant="h5">
-                                                {this.state.overview.recovered}
+                                                {this.props.recovered}
                                             </Typography>
                                             <Typography align="center"  variant="body1">Recovered</Typography>
                                          </Paper>

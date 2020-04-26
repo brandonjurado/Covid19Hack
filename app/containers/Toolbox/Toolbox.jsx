@@ -22,6 +22,7 @@ import StatefarmIcon from './StatefarmIcon.jsx';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NeighborhoodTab from './NeighborhoodTab.jsx';
 import SupplyTab from './SupplyTab.jsx';
+import axios from 'axios';
 
 
 function applyTabProps(index) {
@@ -37,7 +38,11 @@ class Toolbox extends React.Component {
         this.state = {
             value: 0,
             currentSearchItem: "Dallas",
+            neigh_cases: 0,
+            neigh_deaths: 0,
+            neigh_recovered: 0
         };
+        this.mapInstance = null;
     }
 
     handleChange( event, newValue ) {
@@ -63,22 +68,52 @@ class Toolbox extends React.Component {
         this.setState( {
             currentSearchItem: event.target.value
         } )
-        console.log( `search item is ${event.target.value}` )
+        console.log( "New search item ", this.state.currentSearchItem )
+    }
+
+    setMapInstance( inst ) {
+        this.mapInstance = inst;
     }
 
     handleSearchClick( event ){
         console.log( `search item clicked` );
         console.log( "Case selection ", this.state.value )
 
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+
         switch ( this.state.value )
         {
             case 0:{
+                var queryItem = this.state.currentSearchItem.slice();
+
+                console.log( "EP query item ", queryItem )
+
+                queryItem = queryItem.toLowerCase().replace(/ /g, "_");
+
+                console.log( "EP query item ", queryItem )
+
                 axios({
-                  method: 'post',
-                  url: `${this.props.end_point}` + '/county',
-                  data: {
-                    county: `${this.state.currentSearchItem}` ,
-                  }
+                  method: 'get',
+                  url: `https://09d27ogng5.execute-api.us-east-1.amazonaws.com/dev/users/${queryItem}`,
+                  axiosConfig
+                }).then( (response) => {
+                    var values = response.data["name"].split(" ") ;
+
+                    console.log( "Got values ", values )
+
+                    this.setState({
+                        neigh_deaths: parseInt( values[1] ),
+                        neigh_cases: parseInt( values[3] ),
+                        neigh_recovered: parseInt( values[5] )
+                    });
+
+
+                }, (error) => {
+                    console.log( response )
                 });
             }
             break;
@@ -92,6 +127,10 @@ class Toolbox extends React.Component {
             break;
             default: break;
         }
+
+        this.mapInstance.updateLocationMarker( {
+            locationString: this.state.currentSearchItem
+        } )
     }
 
     render() {
@@ -125,7 +164,10 @@ class Toolbox extends React.Component {
                         <Tab label="Help Others"  {...applyTabProps(2)}  icon={ <LocalAtmIcon />}/>
                     </Tabs>
                 </AppBar>
-                <NeighborhoodTab value={this.state.value} index={0} />
+                <NeighborhoodTab value={this.state.value} index={0} 
+                                 cases={this.state.neigh_cases}
+                                 deaths={this.state.neigh_deaths}
+                                 recovered={this.state.neigh_recovered} />
                 <SupplyTab value={this.state.value} index={1} />
             </div>
         )

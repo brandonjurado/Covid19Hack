@@ -28,6 +28,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from '@material-ui/icons/Search';
 import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
 import axios from 'axios';
 import InfoIcon from '@material-ui/icons/Info';
@@ -121,19 +122,6 @@ class NeighborhoodTab extends React.Component {
             });
         } )
     }
-
-    // <Grid container spacing={2} >
-    //                         <Grid item  xs={10}>
-    //                             <TextField onChange={this.handleSearchItemChange.bind(this)} 
-    //                                       placeholder="Search County, City or State" />
-    //                         </Grid>
-    //                         <Grid item  xs={2}>
-    //                             <IconButton  >
-    //                                 <SearchIcon />
-    //                             </IconButton>
-    //                         </Grid>
-    //                     </Grid>
-    //                     <Divider />
 
     render() {
         //console.log("Properties for NeighborhoodTab", this.props)

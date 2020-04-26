@@ -44,8 +44,8 @@ class NeighborhoodTab extends React.Component {
                 deaths: 0,
                 recovered: 0
             },
-            num_since_first_oc: 0,
-            num_since_sec_oc: 0
+            num_since_first_oc: 10,
+            num_since_sec_oc: 9
         };
         this.mapInstance = null;
 
@@ -114,7 +114,7 @@ class NeighborhoodTab extends React.Component {
 
                 // set background data
                 document.getElementById("sim-graph").src = "data:image/png;base64," + response.data
-                document.getElementById("sim-graph").style.width = "400px"
+                document.getElementById("sim-graph").style.width = "500px"
                 document.getElementById("sim-graph").style.height = "350px"
 
             }, (error) => {
@@ -186,6 +186,7 @@ class NeighborhoodTab extends React.Component {
                                             <Box >
                                                 <InputLabel  htmlFor="outlined-adornment-amount"># Days since 1st ocurrence</InputLabel>
                                                 <OutlinedInput
+                                                    value={this.state.num_since_first_oc}
                                                     onChange={this.handleFirstOccurrenceChange.bind(this)}
                                                     startAdornment={<InputAdornment position="start"> </InputAdornment>}
                                                     labelWidth={60} />
@@ -197,6 +198,7 @@ class NeighborhoodTab extends React.Component {
                                             <Box >
                                                 <InputLabel  htmlFor="outlined-adornment-amount"># Days since intervention</InputLabel>
                                                 <OutlinedInput
+                                                    value={this.state.num_since_sec_oc}
                                                     onChange={this.handleSecondOcurrenceChange.bind(this)}
                                                     startAdornment={<InputAdornment position="start"> </InputAdornment>}
                                                     labelWidth={60} />

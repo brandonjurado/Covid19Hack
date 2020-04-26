@@ -18,6 +18,16 @@ html, body, #app, .App, #map, .root{
   left: 0px;
   box-shadow: 0px 0px 20px rgba(10,10,10,0.2 );
 
+#sim-graph {
+      width: 100%;
+    height: 300px;
+    text-align: center;
+    background-image: url(https://i.ibb.co/HGYRxBk/two-peaks.png);
+    background-size: 668px 328px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 #alert-info {
   background: #7289da;
   width: 100%;

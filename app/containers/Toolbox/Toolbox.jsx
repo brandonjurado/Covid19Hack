@@ -37,12 +37,13 @@ class Toolbox extends React.Component {
 
         this.state = {
             value: 0,
-            currentSearchItem: "Dallas",
+            currentSearchItem: "Dallas TX",
             neigh_cases: 0,
             neigh_deaths: 0,
             neigh_recovered: 0
         };
         this.mapInstance = null;
+        this.supplyTabInstance = null;
     }
 
     handleChange( event, newValue ) {
@@ -50,6 +51,8 @@ class Toolbox extends React.Component {
             value: newValue
         } )
         console.log( `switching to ${newValue}` )
+        console.log( "Setting map instance for supply tab", this.mapInstance);
+        this.supplyTabInstance.setMapInstance( this.mapInstance )
     }
 
     handleMenu( event ) {
@@ -62,7 +65,9 @@ class Toolbox extends React.Component {
         var mySVG = document.getElementById('state-farm-icon');
 
         mySVG.setAttribute("viewBox", "170 0 25 30");
+
     }
+
 
     handleSearchItemChange( event ){
         this.setState( {
@@ -73,6 +78,7 @@ class Toolbox extends React.Component {
 
     setMapInstance( inst ) {
         this.mapInstance = inst;
+
     }
 
     handleSearchClick( event ){
@@ -168,7 +174,9 @@ class Toolbox extends React.Component {
                                  cases={this.state.neigh_cases}
                                  deaths={this.state.neigh_deaths}
                                  recovered={this.state.neigh_recovered} />
-                <SupplyTab value={this.state.value} index={1} />
+                <SupplyTab value={this.state.value} index={1} 
+                           currentLocation={this.state.currentSearchItem}
+                           ref={(child) => { this.supplyTabInstance = child} }  />
             </div>
         )
     }

@@ -43,6 +43,40 @@ class Map extends React.Component {
         })
     }
 
+    addLocationMarker( query ) {
+        console.log( "Add location marker for", query )
+
+        axios( {
+            method: 'post',
+            url: `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=AIzaSyC1HZdapvzc-wfRPZYZa31LkwcGmklBEow`
+        } ).then( ( response ) => {
+            console.log( response )
+
+            const lat = response.data.results[0]["geometry"]["location"]["lat"];
+            const lng = response.data.results[0]["geometry"]["location"]["lng"];
+
+            console.log( "Panning to ", response.data.results[0]["geometry"]["location"] )
+
+            this.currentLatLng = new google.maps.LatLng( lat, lng )
+
+            this.map.panTo( this.currentLatLng );
+
+            let marker = new google.maps.Marker( { 
+                position: this.currentLatLng,
+                dragable: false,
+                animation: google.maps.Animation.DROP,
+                map: this.map
+            })
+            marker.addListener('click',() => {
+                  new google.maps.InfoWindow({
+                      content: `${query}`
+                  }).open( this.map, marker);
+            });;
+        }, ( error ) => {
+            console.log( "Google maps returned ", error )
+        })
+    }
+
    componentDidMount() {
         console.log( "Map Component mounted" )
 

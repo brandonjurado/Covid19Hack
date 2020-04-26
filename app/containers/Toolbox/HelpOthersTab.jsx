@@ -95,18 +95,6 @@ export default class HelpOthersTab extends React.Component {
                                     <Grid item  xs={6}>
                                         <FormControl fullWidth variant="outlined">
                                             <Box >
-                                                <InputLabel  htmlFor="outlined-adornment-amount">Item Name</InputLabel>
-                                                <OutlinedInput
-                                                    onChange={this.handleItemNameChange}
-                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
-                                                    labelWidth={75} />
-                                            </Box>
-                                        </FormControl>
-                                    </Grid>
-                                    <br/>
-                                    <Grid item  xs={6}>
-                                        <FormControl fullWidth variant="outlined">
-                                            <Box >
                                                 <InputLabel  htmlFor="outlined-adornment-amount">Your Name</InputLabel>
                                                 <OutlinedInput
                                                     onChange={this.handleCoordsChange}
@@ -131,11 +119,23 @@ export default class HelpOthersTab extends React.Component {
                                     <Grid item  xs={6}>
                                         <FormControl fullWidth variant="outlined">
                                             <Box >
-                                                <InputLabel  htmlFor="outlined-adornment-amount">How many you have</InputLabel>
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Item Name</InputLabel>
+                                                <OutlinedInput
+                                                    onChange={this.handleItemNameChange}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={75} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                    <br/>
+                                    <Grid item  xs={6}>
+                                        <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Item Quantity</InputLabel>
                                                 <OutlinedInput
                                                     onChange={this.handleSupplyCountChange}
                                                     startAdornment={<InputAdornment position="start"> </InputAdornment>}
-                                                    labelWidth={140} />
+                                                    labelWidth={100} />
                                             </Box>
                                         </FormControl>
                                     </Grid>

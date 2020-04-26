@@ -30,6 +30,13 @@ html, body, #container, .App, #map{
         background: red;
     }
 
+    #add-supply-button {
+        position: absolute;
+        bottom: 20px;
+        right: 4px;
+        background: rgba(255,0,44,1);
+    }
+
     .MuiExpansionPanelSummary-root.Mui-expanded {
         min-height: 44px;
     }

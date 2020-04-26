@@ -22,6 +22,8 @@ import StatefarmIcon from './StatefarmIcon.jsx';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NeighborhoodTab from './NeighborhoodTab.jsx';
 import SupplyTab from './SupplyTab.jsx';
+import HelpOthersTab from './HelpOthersTab.jsx';
+import axios from 'axios';
 
 
 function applyTabProps(index) {
@@ -36,8 +38,14 @@ class Toolbox extends React.Component {
 
         this.state = {
             value: 0,
-            currentSearchItem: "Dallas",
+            currentSearchItem: "Dallas TX",
+            neigh_cases: 0,
+            neigh_deaths: 0,
+            neigh_recovered: 0
         };
+        this.mapInstance = null;
+        this.supplyTabInstance = null;
+        this.neighborhoodInstance = null;
     }
 
     handleChange( event, newValue ) {
@@ -45,6 +53,8 @@ class Toolbox extends React.Component {
             value: newValue
         } )
         console.log( `switching to ${newValue}` )
+        console.log( "Setting map instance for tab", this.mapInstance);
+        this.supplyTabInstance.setMapInstance( this.mapInstance )
     }
 
     handleMenu( event ) {
@@ -57,28 +67,64 @@ class Toolbox extends React.Component {
         var mySVG = document.getElementById('state-farm-icon');
 
         mySVG.setAttribute("viewBox", "170 0 25 30");
+
+        var ev = new Event('click', {bubbles:true});
+        ev.simulated = true;
+        document.querySelector('#searchbutton').dispatchEvent(ev);
     }
+
 
     handleSearchItemChange( event ){
         this.setState( {
             currentSearchItem: event.target.value
         } )
-        console.log( `search item is ${event.target.value}` )
+        console.log( "New search item ", this.state.currentSearchItem )
+    }
+
+    setMapInstance( inst ) {
+        this.mapInstance = inst;
     }
 
     handleSearchClick( event ){
         console.log( `search item clicked` );
         console.log( "Case selection ", this.state.value )
 
+        this.neighborhoodInstance.setMapInstance( this.mapInstance );
+
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+
         switch ( this.state.value )
         {
             case 0:{
+                var queryItem = this.state.currentSearchItem.slice();
+
+                console.log( "EP query item ", queryItem )
+
+                queryItem = queryItem.toLowerCase().replace(/ /g, "_");
+
+                console.log( "EP query item ", queryItem )
+
                 axios({
-                  method: 'post',
-                  url: `${this.props.end_point}` + '/county',
-                  data: {
-                    county: `${this.state.currentSearchItem}` ,
-                  }
+                  method: 'get',
+                  url: `https://09d27ogng5.execute-api.us-east-1.amazonaws.com/dev/users/${queryItem}`,
+                  axiosConfig
+                }).then( (response) => {
+                    var values = response.data["name"].split(" ") ;
+
+                    console.log( "Got values ", values )
+
+                    this.setState({
+                        neigh_deaths: parseInt( values[1] ),
+                        neigh_cases: parseInt( values[3] ),
+                        neigh_recovered: parseInt( values[5] )
+                    });
+
+                }, (error) => {
+                    console.log( response )
                 });
             }
             break;
@@ -92,6 +138,10 @@ class Toolbox extends React.Component {
             break;
             default: break;
         }
+
+        this.mapInstance.updateLocationMarker( {
+            locationString: this.state.currentSearchItem
+        } )
     }
 
     render() {
@@ -113,10 +163,11 @@ class Toolbox extends React.Component {
                             <InputLabel  htmlFor="outlined-adornment-amount">Location</InputLabel>
                             <OutlinedInput
                                 id="searchbox"
+                                value={this.state.currentSearchItem}
                                 onChange={this.handleSearchItemChange.bind(this)}
                                 startAdornment={<InputAdornment position="start"> </InputAdornment>}
                                 labelWidth={60} />
-                            <IconButton aria-label="search" onClick={this.handleSearchClick.bind(this)}><SearchIcon /></IconButton>
+                            <IconButton id="searchbutton" aria-label="search" onClick={this.handleSearchClick.bind(this)}><SearchIcon /></IconButton>
                         </Box>
                     </FormControl>
                     <Tabs value={this.state.value} onChange={this.handleChange.bind(this)} >
@@ -125,8 +176,16 @@ class Toolbox extends React.Component {
                         <Tab label="Help Others"  {...applyTabProps(2)}  icon={ <LocalAtmIcon />}/>
                     </Tabs>
                 </AppBar>
-                <NeighborhoodTab value={this.state.value} index={0} />
-                <SupplyTab value={this.state.value} index={1} />
+                <NeighborhoodTab currentLocation={this.state.currentSearchItem}
+                                 value={this.state.value} index={0} 
+                                 cases={this.state.neigh_cases}
+                                 deaths={this.state.neigh_deaths}
+                                 recovered={this.state.neigh_recovered}
+                                 ref={(child) => { this.neighborhoodInstance = child} }  />
+                <SupplyTab value={this.state.value} index={1} 
+                           currentLocation={this.state.currentSearchItem}
+                           ref={(child) => { this.supplyTabInstance = child} }  />
+                <HelpOthersTab value={this.state.value} index={2} />
             </div>
         )
     }

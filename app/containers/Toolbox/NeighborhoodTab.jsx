@@ -22,9 +22,16 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
-import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from '@material-ui/icons/Search';
+import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
+import axios from 'axios';
+import InfoIcon from '@material-ui/icons/Info';
 
 class NeighborhoodTab extends React.Component {
     constructor(props){
@@ -36,29 +43,88 @@ class NeighborhoodTab extends React.Component {
                 cases: 0,
                 deaths: 0,
                 recovered: 0
-            }
+            },
+            num_since_first_oc: 10,
+            num_since_sec_oc: 9
         };
+        this.mapInstance = null;
+
+    }
+    setMapInstance( inst ) {
+        this.mapInstance = inst;
     }
 
    componentDidMount() {
         console.log( "NeighborhoodTab component mounted" );
     }
 
-    // <Grid container spacing={2} >
-    //                         <Grid item  xs={10}>
-    //                             <TextField onChange={this.handleSearchItemChange.bind(this)} 
-    //                                       placeholder="Search County, City or State" />
-    //                         </Grid>
-    //                         <Grid item  xs={2}>
-    //                             <IconButton  >
-    //                                 <SearchIcon />
-    //                             </IconButton>
-    //                         </Grid>
-    //                     </Grid>
-    //                     <Divider />
+    handleFirstOccurrenceChange() {
+        console.log( "NeighborhoodTab first oc change" );
+        this.setState({ num_since_first_oc: event.target.value })
+    }
+
+    handleSecondOcurrenceChange() {
+        console.log( "NeighborhoodTab second os change" );
+        this.setState({ num_since_sec_oc: event.target.value })
+    }
+
+    handleSimClick() {
+        console.log( "NeighborhoodTab running simulation" );
+
+        if ( this.mapInstance === null )
+        {
+            alert("Please select a location first");
+            return;
+        }
+
+        this.mapInstance.getCountyAndState( this.props.currentLocation ).then( ( mapResponse ) => 
+        {
+            console.log(" get county and state of ", this.props.currentLocation )
+            console.log( "Maps api response", mapResponse )
+            
+            var county = "";
+            var state  = "";
+
+            for ( var addr_comp of mapResponse.data.results[0]["address_components"] )
+            {
+                if ( addr_comp["types"][0] === "administrative_area_level_2") {
+                    county = addr_comp["long_name"]
+                    console.log( "Found county", county )
+                }
+
+                if ( addr_comp["types"][0] === "administrative_area_level_1" ) {
+                    state = addr_comp["long_name"]
+                    console.log( "Found state", state )
+                }
+            }
+            
+
+            const axiosConfig = {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            }
+
+            axios({
+              method: 'get',
+              url: ` ${county} ${state} ${this.state.num_since_first_oc} ${this.state.num_since_sec_oc}`, 
+              axiosConfig
+            }).then( (response) => {
+                console.log( "Got values ", response )
+
+                // set background data
+                document.getElementById("sim-graph").src = "data:image/png;base64," + response.data
+                document.getElementById("sim-graph").style.width = "500px"
+                document.getElementById("sim-graph").style.height = "350px"
+
+            }, (error) => {
+                console.log( response )
+            });
+        } )
+    }
 
     render() {
-        console.log("Properties for NeighborhoodTab", this.props)
+        //console.log("Properties for NeighborhoodTab", this.props)
         return ( 
             <div role='tabpanel' hidden={this.props.value !== this.props.index} id={`app-tab-${this.props.index}`}>
                 { this.props.value === this.props.index && 
@@ -76,7 +142,7 @@ class NeighborhoodTab extends React.Component {
                                     <Grid item  xs={4}>
                                          <Paper elevation={3} >
                                             <Typography align="center"  variant="h5">
-                                                {this.state.overview.cases}
+                                                {this.props.cases}
                                             </Typography>
                                             <Typography align="center"  variant="body1">Cases</Typography>
                                          </Paper>
@@ -84,7 +150,7 @@ class NeighborhoodTab extends React.Component {
                                     <Grid item  xs={4}>
                                          <Paper elevation={3} >
                                             <Typography align="center"  variant="h5">
-                                                {this.state.overview.deaths}
+                                                {this.props.deaths}
                                             </Typography>
                                             <Typography align="center"  variant="body1">Deaths</Typography>
                                          </Paper>
@@ -92,13 +158,57 @@ class NeighborhoodTab extends React.Component {
                                     <Grid item  xs={4}>
                                          <Paper elevation={3} >
                                             <Typography align="center" variant="h5">
-                                                {this.state.overview.recovered}
+                                                {this.props.recovered}
                                             </Typography>
                                             <Typography align="center"  variant="body1">Recovered</Typography>
                                          </Paper>
                                     </Grid>
                                 </Grid>
                             </ExpansionPanelDetails>
+                        </ExpansionPanel>
+                        <div id="alert-info">
+                            <Typography><InfoIcon/> The following is based on information from the location's county</Typography>
+                        </div>
+                        <ExpansionPanel id="expansion-panel" expanded={true}>
+                            <ExpansionPanelSummary
+                              expandIcon={<ExpandMoreIcon />}
+                              aria-controls="panel1a-content"
+                              id="panel1a-header" >
+                              <Typography >Reudction Simulation</Typography>
+                            </ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
+                                <Grid
+                                    container
+                                    direction="column"
+                                    alignItems="center" >
+                                    <Grid item  xs={6}>
+                                         <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount"># Days since 1st ocurrence</InputLabel>
+                                                <OutlinedInput
+                                                    value={this.state.num_since_first_oc}
+                                                    onChange={this.handleFirstOccurrenceChange.bind(this)}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={60} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item  xs={6}>
+                                        <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount"># Days since intervention</InputLabel>
+                                                <OutlinedInput
+                                                    value={this.state.num_since_sec_oc}
+                                                    onChange={this.handleSecondOcurrenceChange.bind(this)}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={60} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                </Grid>
+                                <IconButton aria-label="search" onClick={this.handleSimClick.bind(this)}><SearchIcon /></IconButton>
+                            </ExpansionPanelDetails>
+                            <div id="sim-graph"></div>
                         </ExpansionPanel>
                     </form>
                 }

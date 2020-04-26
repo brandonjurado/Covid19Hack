@@ -11,11 +11,35 @@ html, body, #app, .App, #map, .root{
 #toolbox {
   position: fixed;
   z-index: 1;
+  height: 100%
   min-height: 50em;
   background: #2b2a2a;
-  top: 0em;
-  left:0em;
+  top: 0px;
+  left: 0px;
   box-shadow: 0px 0px 20px rgba(10,10,10,0.2 );
+
+#sim-graph {
+      width: 100%;
+    height: 300px;
+    text-align: center;
+    background-image: url(https://i.ibb.co/HGYRxBk/two-peaks.png);
+    background-size: 668px 328px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#alert-info {
+  background: #7289da;
+  width: 100%;
+  height: auto;
+  max-height: 100px; 
+  padding: 0.85em;
+}
+
+  div[role="tabpanel"] {
+    height:80%;
+    overflow-y: auto;
+  }
 
   * {color: white !important; }
 
@@ -32,10 +56,41 @@ html, body, #app, .App, #map, .root{
     background: red;
   }
 
-  #add-supply-button {
+.card-root {
+  position:relative;
+  //   display: flex;
+
+  //   .details {
+  //     display: flex;
+  //     flexDirection: column;
+  //   }
+
+  //   .content {
+  //     flex: 1 0 auto;
+  //   }
+
+    .cover {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      height: 300px;
+      width: 250px;
+      background-size: 300px 300px;
+    }
+}
+
+  //   .controls {
+  //     display: flex;
+  //     alignItems: center;
+  //     paddingLeft: theme.spacing(1);
+  //     paddingBottom: theme.spacing(1);
+  //   }
+  // }
+
+  #add-item-button {
       position: absolute;
       bottom: 20px;
-      right: 4px;
+      right: 15px;
       background: rgba(255,0,44,1);
   }
 
@@ -44,6 +99,10 @@ html, body, #app, .App, #map, .root{
   }
   .MuiExpansionPanelSummary-content.Mui-expanded {
       margin: 0px 0;
+  }
+
+  .MuiCard-root {
+    background: #414447 !important;
   }
 
   #searchbox {

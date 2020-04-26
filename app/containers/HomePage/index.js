@@ -8,11 +8,17 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import Map from '../Map/Map.jsx';
+import Toolbox from '../Toolbox/Toolbox.jsx';
 
 export default function HomePage() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <div className="App">
+      {/* <h1>
+        <FormattedMessage {...messages.header} />
+      </h1> */}
+      <Map />
+      <Toolbox />
+    </div>
   );
 }

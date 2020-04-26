@@ -1,31 +1,37 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    height: 100%;
-    width: 100%;
+html, body, #container, .App, #map{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#toolbox {
+  position: fixed;
+  z-index: 1;
+  width: 450px;
+  height: 940px;
+  background: #2b2a2a;
+  top: 0em;
+  left:0em;
+  box-shadow: 0px 0px 20px rgba(10,10,10,0.2 );
+
+  #state-farm-icon{
+      width:350px;
+      height:1.2em;
   }
 
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  #appbar {
+      background: linear-gradient(20deg, rgba(255,0,44,1) 4%, rgba(255,79,79,1) 53%, rgba(255,0,69,1) 100%);;
   }
+}
 
-  body.fontLoaded {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
+#map {
+  z-index: 0;
+}
 
-  #app {
-    background-color: #fafafa;
-    min-height: 100%;
-    min-width: 100%;
-  }
-
-  p,
-  label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5em;
-  }
 `;
 
 export default GlobalStyle;

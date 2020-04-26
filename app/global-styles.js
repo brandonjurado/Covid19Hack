@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-html, body, #app, .App, #map{
+html, body, #app, .App, #map, .root{
   padding: 0;
   margin: 0;
   height: 100%;

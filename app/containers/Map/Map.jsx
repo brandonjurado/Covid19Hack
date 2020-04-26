@@ -11,7 +11,7 @@ class Map extends React.Component {
     }
 
    componentDidMount() {
-        console.log( "Component mounted" )
+        console.log( "Map Component mounted" )
         
         this.state.map = new google.maps.Map( document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},

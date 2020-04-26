@@ -11,23 +11,38 @@ import HelpIcon from '@material-ui/icons/Help';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import Toolbar from '@material-ui/core/Toolbar';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import StatefarmIcon from './StatefarmIcon.jsx';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 
 
+function applyTabProps(index) {
+    return {
+        id: `app-tab-${index}`,
+    };
+}
+
 class Toolbox extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-            activeTab: 0,
+            value: 0,
+            currentSearchItem: "Dallas",
         };
     }
 
     handleChange( event, newValue ) {
-
+        this.setState( {
+            value: newValue
+        } )
+        console.log( `switching to ${newValue}` )
     }
 
     handleMenu( event ) {
@@ -38,7 +53,43 @@ class Toolbox extends React.Component {
         console.log( "Toolbar component mounted" );
 
         var mySVG = document.getElementById('state-farm-icon');
+
         mySVG.setAttribute("viewBox", "170 0 25 30");
+    }
+
+    handleSearchItemChange( event ){
+        this.setState( {
+            currentSearchItem: event.target.value
+        } )
+        console.log( `search item is ${event.target.value}` )
+    }
+
+    handleSearchClick( event ){
+        console.log( `search item clicked` );
+        console.log( "Case selection ", this.state.value )
+
+        switch ( this.state.value )
+        {
+            case 0:{
+                axios({
+                  method: 'post',
+                  url: `${this.props.end_point}` + '/county',
+                  data: {
+                    county: `${this.state.currentSearchItem}` ,
+                  }
+                });
+            }
+            break;
+            case 1:{
+
+            }
+            break;
+            case 2:{
+
+            }
+            break;
+            default: break;
+        }
     }
 
     render() {
@@ -55,10 +106,21 @@ class Toolbox extends React.Component {
                             <AccountCircle />
                         </IconButton>
                     </Toolbar>
-                    <Tabs value="0" onChange={this.handleChange}>
-                        <Tab label="Neighborhood" value="0" icon={ <HomeWorkIcon />} />
-                        <Tab label="Supplies"     value="1" icon={ <ListAltIcon />}/>
-                        <Tab label="Help Others"  value="2" icon={ <LocalAtmIcon />}/>
+                    <FormControl fullWidth variant="outlined">
+                        <Box display="flex">
+                            <InputLabel  htmlFor="outlined-adornment-amount">Location</InputLabel>
+                            <OutlinedInput
+                                id="searchbox"
+                                onChange={this.handleSearchItemChange.bind(this)}
+                                startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                labelWidth={60} />
+                            <IconButton aria-label="search" onClick={this.handleSearchClick.bind(this)}><SearchIcon /></IconButton>
+                        </Box>
+                    </FormControl>
+                    <Tabs value={this.state.value} onChange={this.handleChange.bind(this)} onChange={this.handleChange}>
+                        <Tab label="Neighborhood" {...applyTabProps(0)} value="0" icon={ <HomeWorkIcon />} />
+                        <Tab label="Supplies"     {...applyTabProps(1)} value="1" icon={ <ListAltIcon />}/>
+                        <Tab label="Help Others"  {...applyTabProps(2)} value="2" icon={ <LocalAtmIcon />}/>
                     </Tabs>
                 </AppBar>
             </div>

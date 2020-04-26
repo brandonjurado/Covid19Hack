@@ -19,7 +19,7 @@ export default function HomePage() {
     <div className="App">
       <Login end_point={endpoint_link} />
       <Map />
-      <Toolbox />
+      <Toolbox end_point={endpoint_link} />
     </div>
   );
 }

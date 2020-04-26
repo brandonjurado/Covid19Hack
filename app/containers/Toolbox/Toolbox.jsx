@@ -20,6 +20,8 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import StatefarmIcon from './StatefarmIcon.jsx';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+import NeighborhoodTab from './NeighborhoodTab.jsx';
+import SupplyTab from './SupplyTab.jsx';
 
 
 function applyTabProps(index) {
@@ -123,6 +125,8 @@ class Toolbox extends React.Component {
                         <Tab label="Help Others"  {...applyTabProps(2)} value="2" icon={ <LocalAtmIcon />}/>
                     </Tabs>
                 </AppBar>
+                <NeighborhoodTab value={this.state.value} index={0} />
+                <SupplyTab value={this.state.value} index={1} />
             </div>
         )
     }

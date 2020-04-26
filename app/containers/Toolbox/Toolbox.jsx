@@ -79,7 +79,6 @@ class Toolbox extends React.Component {
 
     setMapInstance( inst ) {
         this.mapInstance = inst;
-
     }
 
     handleSearchClick( event ){

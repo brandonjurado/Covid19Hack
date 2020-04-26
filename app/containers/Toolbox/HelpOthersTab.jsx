@@ -40,6 +40,7 @@ export default class HelpOthersTab extends React.Component {
                 recovered: 0
             }
         };
+        this.mapInstance = null;
     }
 
    componentDidMount() {
@@ -47,30 +48,55 @@ export default class HelpOthersTab extends React.Component {
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
+
+            this.mapInstance.updateLocationMarker( {
+                locationString: {lat: position.coords.latitude,lng:position.coords.longitude }
+            })
         });
+    }
+
+    handleSubmit(event) {
+        alert('Thank you for helping others in the community!');
+        event.preventDefault();
+        this.showForm = false;
     }
 
     showForm = () => {
         console.log( "Testing1" );
         return (
             <div>
-                <form id="help-others-form">
-                    <label>Item: </label>
-                    <input type="text"></input>
-
-                    <label>Name: </label>
-                    <input type="text"></input>
-
-                    <label>Phone: </label>
-                    <input type="text"></input>
-
-                    <label>Location: </label>
-                    <input type="text"></input>
-
-                    <input type="submit" value="Add"/>
+                <form id="help-others-form" onSubmit={this.handleSubmit}>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label>Item: </label></td>
+                                <td><input type="text" required></input></td>
+                            </tr>
+                            <tr>
+                                <td><label>Name: </label></td>
+                                <td><input type="text" required></input></td>
+                            </tr>
+                            <tr>                      
+                                <td><label>Phone: </label></td>
+                                <td><input type="text"></input></td>
+                            </tr>
+                            <tr>
+                                <td><label>Location: </label></td>
+                                <td><input type="text"></input></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input align="right" type="submit" value="Add"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </form>
             </div>
         );
+    }
+
+    setMapInstance( inst ) {
+        this.mapInstance = inst;
     }
 
     render() {

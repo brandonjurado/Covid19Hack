@@ -22,7 +22,6 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
-import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 
@@ -43,19 +42,6 @@ class NeighborhoodTab extends React.Component {
    componentDidMount() {
         console.log( "NeighborhoodTab component mounted" );
     }
-
-    // <Grid container spacing={2} >
-    //                         <Grid item  xs={10}>
-    //                             <TextField onChange={this.handleSearchItemChange.bind(this)} 
-    //                                       placeholder="Search County, City or State" />
-    //                         </Grid>
-    //                         <Grid item  xs={2}>
-    //                             <IconButton  >
-    //                                 <SearchIcon />
-    //                             </IconButton>
-    //                         </Grid>
-    //                     </Grid>
-    //                     <Divider />
 
     render() {
         //console.log("Properties for NeighborhoodTab", this.props)

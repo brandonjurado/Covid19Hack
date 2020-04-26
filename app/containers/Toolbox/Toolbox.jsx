@@ -44,6 +44,7 @@ class Toolbox extends React.Component {
         };
         this.mapInstance = null;
         this.supplyTabInstance = null;
+        this.neighborhoodInstance = null;
     }
 
     handleChange( event, newValue ) {
@@ -66,6 +67,9 @@ class Toolbox extends React.Component {
 
         mySVG.setAttribute("viewBox", "170 0 25 30");
 
+        var ev = new Event('click', {bubbles:true});
+        ev.simulated = true;
+        document.querySelector('#searchbutton').dispatchEvent(ev);
     }
 
 
@@ -78,12 +82,13 @@ class Toolbox extends React.Component {
 
     setMapInstance( inst ) {
         this.mapInstance = inst;
-
     }
 
     handleSearchClick( event ){
         console.log( `search item clicked` );
         console.log( "Case selection ", this.state.value )
+
+        this.neighborhoodInstance.setMapInstance( this.mapInstance );
 
         const axiosConfig = {
             headers: {
@@ -116,7 +121,6 @@ class Toolbox extends React.Component {
                         neigh_cases: parseInt( values[3] ),
                         neigh_recovered: parseInt( values[5] )
                     });
-
 
                 }, (error) => {
                     console.log( response )
@@ -158,10 +162,11 @@ class Toolbox extends React.Component {
                             <InputLabel  htmlFor="outlined-adornment-amount">Location</InputLabel>
                             <OutlinedInput
                                 id="searchbox"
+                                value={this.state.currentSearchItem}
                                 onChange={this.handleSearchItemChange.bind(this)}
                                 startAdornment={<InputAdornment position="start"> </InputAdornment>}
                                 labelWidth={60} />
-                            <IconButton aria-label="search" onClick={this.handleSearchClick.bind(this)}><SearchIcon /></IconButton>
+                            <IconButton id="searchbutton" aria-label="search" onClick={this.handleSearchClick.bind(this)}><SearchIcon /></IconButton>
                         </Box>
                     </FormControl>
                     <Tabs value={this.state.value} onChange={this.handleChange.bind(this)} >
@@ -170,10 +175,12 @@ class Toolbox extends React.Component {
                         <Tab label="Help Others"  {...applyTabProps(2)}  icon={ <LocalAtmIcon />}/>
                     </Tabs>
                 </AppBar>
-                <NeighborhoodTab value={this.state.value} index={0} 
+                <NeighborhoodTab currentLocation={this.state.currentSearchItem}
+                                 value={this.state.value} index={0} 
                                  cases={this.state.neigh_cases}
                                  deaths={this.state.neigh_deaths}
-                                 recovered={this.state.neigh_recovered} />
+                                 recovered={this.state.neigh_recovered}
+                                 ref={(child) => { this.neighborhoodInstance = child} }  />
                 <SupplyTab value={this.state.value} index={1} 
                            currentLocation={this.state.currentSearchItem}
                            ref={(child) => { this.supplyTabInstance = child} }  />

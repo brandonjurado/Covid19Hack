@@ -18,6 +18,14 @@ html, body, #app, .App, #map, .root{
   left: 0px;
   box-shadow: 0px 0px 20px rgba(10,10,10,0.2 );
 
+#alert-info {
+  background: #7289da;
+  width: 100%;
+  height: auto;
+  max-height: 100px; 
+  padding: 0.85em;
+}
+
   div[role="tabpanel"] {
     height:80%;
     overflow-y: auto;

@@ -1,3 +1,6 @@
+import Grid from '@material-ui/core/Grid';
+import FormControl from '@material-ui/core/FormControl';
+import Box from '@material-ui/core/Box';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
@@ -22,6 +25,10 @@ import axios from 'axios';
 import PhoneIcon from '@material-ui/icons/Phone';
 import ShareIcon from '@material-ui/icons/Share';
 import Popover from '@material-ui/core/Popover';
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
+
 
 class SupplyTab extends React.Component {
     constructor(props){
@@ -32,7 +39,12 @@ class SupplyTab extends React.Component {
             expandedOverview: true,
             openAddSupplyDialog: false,
             shouldCloseDialog: true,
-            items: []
+            items: [],
+            lastInsertedItem : {
+                name: "",
+                amount: 0,
+                coords: []
+            }
         };
     }
 
@@ -72,7 +84,8 @@ class SupplyTab extends React.Component {
 
     handleClose( event ) {
         console.log( "Clossing supply dialog" )
-        this.setState({ openAddSupplyDialog: false })
+        this.setState({ openAddSupplyDialog: false });
+
     }
 
     handleAddUSupply( event ) {
@@ -87,6 +100,26 @@ class SupplyTab extends React.Component {
        addr = addr.replace( /_/g, " ")
 
        this.mapInstance.addLocationMarker( addr );
+    }
+
+    handleCoordsChange( event ) 
+    {
+        var coords = []
+        this.setState( prevState => ({
+              lastInsertedItem: {...prevState.lastInsertedItem, coords: coords }
+        }));
+    }
+
+    handleSupplyCountChange( event )
+    {
+        this.setState( prevState => ({
+              lastInsertedItem: {...prevState.lastInsertedItem, coords: coords }
+        }));
+    }
+
+    handleItemNameChange( event )
+    {
+
     }
 
     render() {
@@ -104,8 +137,8 @@ class SupplyTab extends React.Component {
                                     <Typography component="h6" variant="h6">
                                         {item[0].replace(/_/g, " ")}
                                     </Typography>
-                                    <Typography variant="subtitle1" color="textSecondary">
-                                        {item[1].replace(/_/g, " ")}
+                                    <Typography variant="subtitle2" color="textSecondary">
+                                        {item[4].replace(/_/g, " ")}
                                     </Typography>
                                 </CardContent>
                                 <div className="controls">
@@ -132,25 +165,63 @@ class SupplyTab extends React.Component {
             <Dialog onClose={this.handleClose.bind(this)} open={this.state.openAddSupplyDialog}>
                 <MuiDialogTitle disableTypography >
                   <Typography variant="h6">
-                    Add Supply
-                  </Typography>
                     {
                         this.state.openAddSupplyDialog ? 
                         (
-                            <IconButton onClick={this.handleClose.bind(this)}>
-                                <CloseIcon />
-                            </IconButton>
+                            <IconButton onClick={this.handleClose.bind(this)}><CloseIcon /></IconButton>
                         ) 
                         : null
                     }
+                    Add Supply 
+                  </Typography>
+                  <Typography variant="subtitle2">
+                    Let others know what you have to help the community!
+                  </Typography>
                 </MuiDialogTitle>
                 <MuiDialogContent dividers>
                   <Typography gutterBottom>
-                    stuff
+                    <Grid
+                        container
+                        direction="column"
+                        alignItems="center" >
+                        <Grid item  xs={6}>
+                             <FormControl fullWidth variant="outlined">
+                                <Box >
+                                    <InputLabel  htmlFor="outlined-adornment-amount">Item Name</InputLabel>
+                                    <OutlinedInput
+                                        onChange={this.handleItemNameChange.bind(this)}
+                                        startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                        labelWidth={60} />
+                                </Box>
+                            </FormControl>
+                        </Grid>
+                        <Grid item  xs={6}>
+                             <FormControl fullWidth variant="outlined">
+                                <Box >
+                                    <InputLabel  htmlFor="outlined-adornment-amount">Your Coordinates</InputLabel>
+                                    <OutlinedInput
+                                        onChange={this.handleCoordsChange.bind(this)}
+                                        startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                        labelWidth={60} />
+                                </Box>
+                            </FormControl>
+                        </Grid>
+                        <Grid item  xs={6}>
+                            <FormControl fullWidth variant="outlined">
+                                <Box >
+                                    <InputLabel  htmlFor="outlined-adornment-amount">How many you have</InputLabel>
+                                    <OutlinedInput
+                                        onChange={this.handleSupplyCountChange.bind(this)}
+                                        startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                        labelWidth={60} />
+                                </Box>
+                            </FormControl>
+                        </Grid>
+                    </Grid>
                   </Typography>
                 </MuiDialogContent>
                 <MuiDialogActions>
-                  <IconButton autoFocus onClick={this.handleClose.bind(this)} color="success">
+                  <IconButton autoFocus onClick={this.handleClose.bind(this)} color="primary">
                     Done
                   </IconButton>
                 </MuiDialogActions>

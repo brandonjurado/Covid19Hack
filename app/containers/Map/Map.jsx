@@ -43,6 +43,14 @@ class Map extends React.Component {
         })
     }
 
+    getCountyAndState( query )
+    {
+        return axios( {
+            method: 'post',
+            url: `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=AIzaSyC1HZdapvzc-wfRPZYZa31LkwcGmklBEow`
+        } );
+    }
+
     addLocationMarker( query ) {
         console.log( "Add location marker for", query )
 

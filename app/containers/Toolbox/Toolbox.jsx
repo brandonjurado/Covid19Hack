@@ -119,10 +119,10 @@ class Toolbox extends React.Component {
                             <IconButton aria-label="search" onClick={this.handleSearchClick.bind(this)}><SearchIcon /></IconButton>
                         </Box>
                     </FormControl>
-                    <Tabs value={this.state.value} onChange={this.handleChange.bind(this)} onChange={this.handleChange}>
-                        <Tab label="Neighborhood" {...applyTabProps(0)} value="0" icon={ <HomeWorkIcon />} />
-                        <Tab label="Supplies"     {...applyTabProps(1)} value="1" icon={ <ListAltIcon />}/>
-                        <Tab label="Help Others"  {...applyTabProps(2)} value="2" icon={ <LocalAtmIcon />}/>
+                    <Tabs value={this.state.value} onChange={this.handleChange.bind(this)} >
+                        <Tab label="Neighborhood" {...applyTabProps(0)} icon={ <HomeWorkIcon />} />
+                        <Tab label="Supplies"     {...applyTabProps(1)}  icon={ <ListAltIcon />}/>
+                        <Tab label="Help Others"  {...applyTabProps(2)}  icon={ <LocalAtmIcon />}/>
                     </Tabs>
                 </AppBar>
                 <NeighborhoodTab value={this.state.value} index={0} />

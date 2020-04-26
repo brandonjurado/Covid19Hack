@@ -1,5 +1,5 @@
 <img src="https://medschool.cuanschutz.edu/images/librariesprovider45/covid-19/covid-banner.jpg" alt="covid 19 banner" align="center">
-<div align="center" style="font-size:2.5em;"><strong>Earth Hack 2020 - Covid-19</strong></div>
+# Earth Hack 2020 - Covid-19
 
 ## Features
 

@@ -55,13 +55,11 @@ class Toolbox extends React.Component {
                             <AccountCircle />
                         </IconButton>
                     </Toolbar>
-                    <Tabs value=""
-                        onChange={this.handleChange}
-                        centered >
-                    <Tab label="Neighborhood" value="0" icon={ <HomeWorkIcon />} />
-                    <Tab label="Supplies"     value="1" icon={ <ListAltIcon />}/>
-                    <Tab label="Help Others"  value="2" icon={ <LocalAtmIcon />}/>
-                  </Tabs>
+                    <Tabs value="0" onChange={this.handleChange}>
+                        <Tab label="Neighborhood" value="0" icon={ <HomeWorkIcon />} />
+                        <Tab label="Supplies"     value="1" icon={ <ListAltIcon />}/>
+                        <Tab label="Help Others"  value="2" icon={ <LocalAtmIcon />}/>
+                    </Tabs>
                 </AppBar>
             </div>
         )

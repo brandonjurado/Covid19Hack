@@ -77,7 +77,7 @@ html, body, #app, .App, #map, .root{
   //   }
   // }
 
-  #add-supply-button {
+  #add-item-button {
       position: absolute;
       bottom: 20px;
       right: 15px;

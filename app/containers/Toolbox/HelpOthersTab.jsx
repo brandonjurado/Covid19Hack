@@ -1,38 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import HomeWorkIcon from '@material-ui/icons/HomeWork';
-import HelpIcon from '@material-ui/icons/Help';
-import ListAltIcon from '@material-ui/icons/ListAlt';
-import Toolbar from '@material-ui/core/Toolbar';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import StatefarmIcon from './StatefarmIcon.jsx';
-import LocalAtmIcon from '@material-ui/icons/LocalAtm';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/AddCircle';
-import RemoveIcon from '@material-ui/icons/RemoveCircle'
-import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
+import Fab from '@material-ui/core/Fab';
+import Dialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import MuiDialogActions from '@material-ui/core/DialogActions';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import CloseIcon from '@material-ui/icons/Close';
 
 export default class HelpOthersTab extends React.Component {
     constructor(props){
         super(props);
+        this.mapInstance = null;
 
         this.state = {
-            showForm: false,
+            openAddItemDialog: false,
             expandedOverview: true,
             overview: {
                 cases: 0,
@@ -40,7 +29,6 @@ export default class HelpOthersTab extends React.Component {
                 recovered: 0
             }
         };
-        this.mapInstance = null;
     }
 
    componentDidMount() {
@@ -58,41 +46,6 @@ export default class HelpOthersTab extends React.Component {
     handleSubmit(event) {
         alert('Thank you for helping others in the community!');
         event.preventDefault();
-        this.showForm = false;
-    }
-
-    showForm = () => {
-        console.log( "Testing1" );
-        return (
-            <div>
-                <form id="help-others-form" onSubmit={this.handleSubmit}>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><label>Item: </label></td>
-                                <td><input type="text" required></input></td>
-                            </tr>
-                            <tr>
-                                <td><label>Name: </label></td>
-                                <td><input type="text" required></input></td>
-                            </tr>
-                            <tr>                      
-                                <td><label>Phone: </label></td>
-                                <td><input type="text"></input></td>
-                            </tr>
-                            <tr>
-                                <td><label>Location: </label></td>
-                                <td><input type="text"></input></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><input align="right" type="submit" value="Add"/></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
-            </div>
-        );
     }
 
     setMapInstance( inst ) {
@@ -100,15 +53,91 @@ export default class HelpOthersTab extends React.Component {
     }
 
     render() {
-        //console.log("Properties for HelpOthersTab", this.props)
+        console.log("Properties for HelpOthersTab", this.props)
         const { showForm } = this.state;
         return ( 
             <div role='tabpanel' hidden={this.props.value !== this.props.index} id={`app-tab-${this.props.index}`}>
-                { this.props.value === this.props.index && 
+                { 
+                    this.props.value === this.props.index && 
                     <div>
-                    {!showForm && <IconButton aria-label="search" onClick={() => this.setState({showForm: true}) }><AddIcon /></IconButton>}
-                    {showForm && <IconButton aria-label="search" onClick={() => this.setState({showForm: false}) }><RemoveIcon /></IconButton>}
-                    {showForm && this.showForm()}
+                        <Fab id="add-item-button" onClick={() => this.setState({ openAddItemDialog: true })} aria-label='add_item' color='secondary'>
+                        <AddIcon />
+                        </Fab>
+                        <Dialog onClose={() => this.setState({ openAddItemDialog: false })} open={this.state.openAddItemDialog}>
+                            <MuiDialogTitle disableTypography >
+                            <Typography variant="h6">
+                                Add Item
+                                {
+                                    this.state.openAddItemDialog ? 
+                                    (
+                                        <IconButton onClick={() => this.setState({ openAddItemDialog: false })} alignItems="flex-start" justify="flex-end" direct="row"><CloseIcon /></IconButton>
+                                    ) 
+                                    : null
+                                }
+                            </Typography>
+                            <Typography variant="subtitle2">
+                                Let others know what you have to help the community!
+                            </Typography>
+                            </MuiDialogTitle>
+                            <MuiDialogContent dividers>
+                            <Typography gutterBottom>
+                                <Grid
+                                    container
+                                    direction="column"
+                                    alignItems="center" >
+                                    <Grid item  xs={6}>
+                                        <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Item Name</InputLabel>
+                                                <OutlinedInput
+                                                    onChange={this.handleItemNameChange}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={60} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item  xs={6}>
+                                        <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Your Name</InputLabel>
+                                                <OutlinedInput
+                                                    onChange={this.handleCoordsChange}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={60} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item  xs={6}>
+                                        <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Your Coordinates</InputLabel>
+                                                <OutlinedInput
+                                                    onChange={this.handleCoordsChange}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={60} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item  xs={6}>
+                                        <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount">How many you have</InputLabel>
+                                                <OutlinedInput
+                                                    onChange={this.handleSupplyCountChange}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={60} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                </Grid>
+                            </Typography>
+                            </MuiDialogContent>
+                            <MuiDialogActions>
+                            <IconButton autoFocus onClick={() => this.setState({ openAddItemDialog: false })} color="primary">
+                                Submit
+                            </IconButton>
+                            </MuiDialogActions>
+                        </Dialog>
                     </div>
                 }
             </div>

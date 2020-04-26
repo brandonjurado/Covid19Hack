@@ -22,6 +22,7 @@ import StatefarmIcon from './StatefarmIcon.jsx';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import NeighborhoodTab from './NeighborhoodTab.jsx';
 import SupplyTab from './SupplyTab.jsx';
+import HelpOthersTab from './HelpOthersTab.jsx';
 import axios from 'axios';
 
 
@@ -52,7 +53,7 @@ class Toolbox extends React.Component {
             value: newValue
         } )
         console.log( `switching to ${newValue}` )
-        console.log( "Setting map instance for supply tab", this.mapInstance);
+        console.log( "Setting map instance for tab", this.mapInstance);
         this.supplyTabInstance.setMapInstance( this.mapInstance )
     }
 
@@ -184,6 +185,7 @@ class Toolbox extends React.Component {
                 <SupplyTab value={this.state.value} index={1} 
                            currentLocation={this.state.currentSearchItem}
                            ref={(child) => { this.supplyTabInstance = child} }  />
+                <HelpOthersTab value={this.state.value} index={2} />
             </div>
         )
     }

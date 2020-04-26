@@ -10,6 +10,14 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import Fab from '@material-ui/core/Fab';
+// import Button from '@mater'
+import AddIcon from '@material-ui/icons/Add';
+import CloseIcon from '@material-ui/icons/Close';
+import Dialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import MuiDialogActions from '@material-ui/core/DialogActions';
 
 class SupplyTab extends React.Component {
     constructor(props){
@@ -17,16 +25,26 @@ class SupplyTab extends React.Component {
 
         this.state = {
             expandedOverview: true,
-            overview: {
-                cases: 0,
-                deaths: 0,
-                recovered: 0
-            }
+            openAddSupplyDialog: false,
+            shouldCloseDialog: true
         };
     }
 
    componentDidMount() {
         console.log( "SupplyTab component mounted" );
+    }
+
+    handleAddUser( event ) {
+        console.log() 
+    }
+
+    handleClose( event ) {
+        console.log( "Clossing supply dialog" )
+        this.setState({ openAddSupplyDialog: false })
+    }
+
+    handleAddUSupply( event ) {
+        this.setState({ openAddSupplyDialog: true })
     }
 
     render() {
@@ -53,6 +71,35 @@ class SupplyTab extends React.Component {
                         title="Live from space album cover" />
                 </Card>
             }
+             <Fab id="add-supply-button" onClick={this.handleAddUSupply.bind(this)} aria-label='add_user' color='secondary'>
+                <AddIcon />
+            </Fab>
+            <Dialog onClose={this.handleClose.bind(this)} open={this.state.openAddSupplyDialog}>
+                <MuiDialogTitle disableTypography >
+                  <Typography variant="h6">
+                    Add Supply
+                  </Typography>
+                    {
+                        this.state.openAddSupplyDialog ? 
+                        (
+                            <IconButton onClick={this.handleClose.bind(this)}>
+                                <CloseIcon />
+                            </IconButton>
+                        ) 
+                        : null
+                    }
+                </MuiDialogTitle>
+                <MuiDialogContent dividers>
+                  <Typography gutterBottom>
+                    stuff
+                  </Typography>
+                </MuiDialogContent>
+                <MuiDialogActions>
+                  <IconButton autoFocus onClick={this.handleClose.bind(this)} color="success">
+                    Done
+                  </IconButton>
+                </MuiDialogActions>
+              </Dialog>`
         </div>
         )
     }

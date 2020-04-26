@@ -12,22 +12,27 @@ An informative and highly scalable wep application covering Covid-19 that is ava
 4.  Run `npm run setup` in order to install dependencies and clean the git repo.<br />
     _At this point you can run `npm start` to see the example app at `http://localhost:3000`._
 
-### Starting the Stats/ML Models Frame Work
+###The Stats/ML Models Frame Work with Login Server Load Balancing
+In the interest of quick delivery of information with almost infinite scalability, we decided to employ the "Kubeless" archictecture so that login systems would never become bogged down, and we could then provide a fast and easy mechansim for data scientists and others to get information out quickly and efficiently.  This is built on top of AWS Lambdas and Serverless.
 
+To build we are going to assume that you have a kubernetes cluster already set up and configured with kubectl and eksctl.  You will also need AWS Lambdas setup with AWS Fargate and the CLI tools installed and ready to go.
+From there, you are going to run:
 ```
-$ cd StatsModelsFW
-$ pip install -r requirements.txt
-$ python statsModelsAPI.py
-# open your browser and go to https://localhost:5000
+$ kubectl create ns kubeless
+$ kubectl create -f https://github.com/kubeless/kubeless/releases/download/v1.0.6/kubeless-v1.0.6.yaml
 ```
-Build all of your models in BuildModels as separate python files
-Then in statsModelsAPI.py
-- import the new function as `from ModelBuilds.my_file import my_function`
-- define a new route with `@app.route("/endpoint")`  
-- have that route define a function that simply returns `my_function`
-
-To test the homepage will automatically launch and /test_model will run through basic functionality and return a statistic.
-AWS deployment instructions to come soon.
+This will take some time, but it creates a new namespace called kubeless and then creates services in that namespace.
+Once completed install:
+`
+$ git clone https://github.com/serverless/serverless-kubeless
+$ npm install serverless -g
+`
+This will get the plugin from serverless for kubeless and install it globably.
+After that, your Kubernetes and AWS administrators will need to provide you with IAM user profiles as well as config files that need to be put in the proper place.  Once everything is done, we have provided an example of the boiler plate endpoint setups, and when you have modidifed them to your needs simply run:
+`
+$ serverless deploy
+`
+It will automatically take care of provision of everything from S3 to lambdas and provide you with a reverse proxy to the endpoint!
 
 ## Contributors
 

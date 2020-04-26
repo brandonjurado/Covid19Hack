@@ -7,13 +7,15 @@ import Map from './Map.jsx';
 import Toolbox from './Toolbox.jsx';
 import Login from'./Login.jsx';
 
+const endpoint_link = "https://09d27ogng5.execute-api.us-east-1.amazonaws.com/dev/"
+
 function App() {
   console.log("Adding react component")
   return (
     <div className="App"> 
-        <Login />
+        <Login end_point={endpoint_link} />
         <Map />
-        <Toolbox />
+        <Toolbox end_point={endpoint_link}/>
     </div>
   );
 }

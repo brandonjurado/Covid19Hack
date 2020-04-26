@@ -44,6 +44,7 @@ export default class HelpOthersTab extends React.Component {
     }
 
     handleSubmit(event) {
+        this.setState({ openAddItemDialog: false })
         alert('Thank you for helping others in the community!');
         event.preventDefault();
     }
@@ -65,21 +66,27 @@ export default class HelpOthersTab extends React.Component {
                         </Fab>
                         <Dialog onClose={() => this.setState({ openAddItemDialog: false })} open={this.state.openAddItemDialog}>
                             <MuiDialogTitle disableTypography >
-                            <Typography variant="h6">
-                                Add Item
-                                {
-                                    this.state.openAddItemDialog ? 
-                                    (
-                                        <IconButton onClick={() => this.setState({ openAddItemDialog: false })} alignItems="flex-start" justify="flex-end" direct="row"><CloseIcon /></IconButton>
-                                    ) 
-                                    : null
-                                }
-                            </Typography>
-                            <Typography variant="subtitle2">
-                                Let others know what you have to help the community!
-                            </Typography>
+                                <Typography variant="h6">
+                                    <Grid>
+                                        {
+                                            this.state.openAddItemDialog ? (
+                                                <IconButton onClick={() => this.setState({ openAddItemDialog: false })} alignItems="flex-start" justify="flex-end" direct="row"><CloseIcon /></IconButton>
+                                            ) 
+                                            : null
+                                        }
+                                    </Grid>
+                                    <Grid container direction="column" alignItems="center">
+                                        <Grid item  xs={6}>
+                                            Add Item
+                                        </Grid>
+                                    </Grid>
+                                </Typography>
+                                <Typography variant="subtitle2">
+                                    Let others know what you have to help the community!
+                                </Typography>
                             </MuiDialogTitle>
                             <MuiDialogContent dividers>
+                            <form>
                             <Typography gutterBottom>
                                 <Grid
                                     container
@@ -88,52 +95,56 @@ export default class HelpOthersTab extends React.Component {
                                     <Grid item  xs={6}>
                                         <FormControl fullWidth variant="outlined">
                                             <Box >
-                                                <InputLabel  htmlFor="outlined-adornment-amount">Item Name</InputLabel>
-                                                <OutlinedInput
-                                                    onChange={this.handleItemNameChange}
-                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
-                                                    labelWidth={60} />
-                                            </Box>
-                                        </FormControl>
-                                    </Grid>
-                                    <Grid item  xs={6}>
-                                        <FormControl fullWidth variant="outlined">
-                                            <Box >
                                                 <InputLabel  htmlFor="outlined-adornment-amount">Your Name</InputLabel>
                                                 <OutlinedInput
                                                     onChange={this.handleCoordsChange}
                                                     startAdornment={<InputAdornment position="start"> </InputAdornment>}
-                                                    labelWidth={60} />
+                                                    labelWidth={75} />
                                             </Box>
                                         </FormControl>
                                     </Grid>
+                                    <br/>
                                     <Grid item  xs={6}>
                                         <FormControl fullWidth variant="outlined">
                                             <Box >
-                                                <InputLabel  htmlFor="outlined-adornment-amount">Your Coordinates</InputLabel>
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Your Location</InputLabel>
                                                 <OutlinedInput
                                                     onChange={this.handleCoordsChange}
                                                     startAdornment={<InputAdornment position="start"> </InputAdornment>}
-                                                    labelWidth={60} />
+                                                    labelWidth={100} />
                                             </Box>
                                         </FormControl>
                                     </Grid>
+                                    <br/>
                                     <Grid item  xs={6}>
                                         <FormControl fullWidth variant="outlined">
                                             <Box >
-                                                <InputLabel  htmlFor="outlined-adornment-amount">How many you have</InputLabel>
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Item Name</InputLabel>
+                                                <OutlinedInput
+                                                    onChange={this.handleItemNameChange}
+                                                    startAdornment={<InputAdornment position="start"> </InputAdornment>}
+                                                    labelWidth={75} />
+                                            </Box>
+                                        </FormControl>
+                                    </Grid>
+                                    <br/>
+                                    <Grid item  xs={6}>
+                                        <FormControl fullWidth variant="outlined">
+                                            <Box >
+                                                <InputLabel  htmlFor="outlined-adornment-amount">Item Quantity</InputLabel>
                                                 <OutlinedInput
                                                     onChange={this.handleSupplyCountChange}
                                                     startAdornment={<InputAdornment position="start"> </InputAdornment>}
-                                                    labelWidth={60} />
+                                                    labelWidth={100} />
                                             </Box>
                                         </FormControl>
                                     </Grid>
                                 </Grid>
                             </Typography>
+                            </form>
                             </MuiDialogContent>
                             <MuiDialogActions>
-                            <IconButton autoFocus onClick={() => this.setState({ openAddItemDialog: false })} color="primary">
+                            <IconButton autoFocus onClick={(event) => { this.handleSubmit(event); } } color="primary">
                                 Submit
                             </IconButton>
                             </MuiDialogActions>

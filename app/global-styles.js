@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-html, body, #container, .App, #map{
+html, body, #app, .App, #map{
   padding: 0;
   margin: 0;
   height: 100%;
@@ -11,8 +11,7 @@ html, body, #container, .App, #map{
 #toolbox {
   position: fixed;
   z-index: 1;
-  width: 450px;
-  height: 940px;
+  min-height: 50em;
   background: #2b2a2a;
   top: 0em;
   left:0em;

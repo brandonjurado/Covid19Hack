@@ -110,7 +110,7 @@ networkx==2.4
 nltk==3.4.5
 notebook==6.0.3
 numba==0.48.0
-numpy==1.18.1
+numpy==1.22.0
 oauthlib==3.0.1
 olefile==0.46
 opt-einsum==0+untagged.53.g6ab433b.dirty

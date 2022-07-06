@@ -86,7 +86,7 @@ Keras-Preprocessing==1.1.0
 kiwisolver==1.1.0
 libarchive-c==2.8
 llvmlite==0.31.0
-lxml==4.5.0
+lxml==4.9.1
 Mako==1.1.0
 Markdown==3.2.1
 MarkupSafe==1.1.1
